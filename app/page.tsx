@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Header3 from './components/Header3';
 import Header from './components/Header';
 import Header2 from './components/Header2';
