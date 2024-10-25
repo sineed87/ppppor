@@ -1,3 +1,4 @@
+import { title } from "process";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -8,6 +9,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        manrope:["Manrope","sans-serif"],
+        raleway:[ "Raleway", "sans-serif"],
+        work:[ "Work Sans", "sans-serif"],
+      },
+
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
