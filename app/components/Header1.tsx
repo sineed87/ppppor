@@ -1,7 +1,7 @@
 "use client";
 
 
-import { ArrowUpRight, ChevronsDown, SquareArrowOutUpRight } from 'lucide-react';
+import { ChevronsDown, SquareArrowOutUpRight } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 function LandingPage() {
