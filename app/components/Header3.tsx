@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronsDown } from 'lucide-react'; // Import Lucide ChevronsDown icon
+import FlipLink from './RevealLinks2'; // Adjust the path as necessary
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,15 +75,14 @@ const Header3 = () => {
         // Scale effect for links on scroll
         if (textElement) {
             gsap.fromTo(textElement, 
-                { scale: 3.0 }, // Initial scale
+                { scale: 1.4 }, // Initial scale
                 {
-                    scale: 0.4, // Scale down
+                    scale: 1.0, // Scale down
                     scrollTrigger: {
                         trigger: textElement,
                         start: "top center",
                         end: "bottom center",
                         scrub: 2, // Smooth animation while scrolling
-                        // Optional: Add a toggle class or functionality if needed
                     },
                 }
             );
@@ -93,10 +93,10 @@ const Header3 = () => {
         <header style={{ backgroundColor: '#4801FF' }} className="text-black h-screen relative overflow-hidden">
             {/* Social links moved to top-left corner */}
             <div className="absolute text-white uppercase font-work font-bold text-lg">
-                <div className="flex p-10 space-x-5">
-                    <a href="#" className="hover:underline">03 twitter</a>
-                    <a href="#" className="hover:underline">04 instagram</a>
-                    <a href="#" className="hover:underline">05 linkedin</a>
+                <div className="flex p-10 space-x-10">
+                    <FlipLink href="#">03&nbsp;Twitter </FlipLink>
+                    <FlipLink href="#">04&nbsp; Instagram</FlipLink>
+                    <FlipLink href="#">05&nbsp;LinkedIn</FlipLink>
                 </div>
                 <div className="absolute h-72 w-120 pl-10 mt-40 ">
                     <video
@@ -137,8 +137,7 @@ const Header3 = () => {
                 <a href="/projects">
                     <h1 ref={studioRef} className="text-[10vw] flex font-black tracking-tight uppercase cursor-pointer">
                         <div className='flex text-[4vw] font-bold'></div>
-                        
-                        <p className='font-thin'>/</p> PROJECTS
+                        PROJECTS
                     </h1>
                 </a>
                 
@@ -152,7 +151,7 @@ const Header3 = () => {
                 {/* CONTACT link */}
                 <a href="/contact">
                     <h1 ref={contactRef} className="text-[10vw] tracking-tight uppercase cursor-pointer">
-                        CONTACT
+                       CONTACT
                     </h1>
                 </a>
 

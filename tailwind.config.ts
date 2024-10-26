@@ -13,6 +13,7 @@ const config: Config = {
         manrope:["Manrope","sans-serif"],
         raleway:[ "Raleway", "sans-serif"],
         work:[ "Work Sans", "sans-serif"],
+        akz:[ "AkzidenzGrotesk", "sans-serif"],
       },
 
       colors: {
