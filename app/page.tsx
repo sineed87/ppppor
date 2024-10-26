@@ -3,10 +3,10 @@
 
 import React, { useRef } from 'react';
 import Header3 from './components/Header3';          // Default export check
-import Header from './components/Header';            // Default export check
+          // Default export check
 import Header2 from './components/Header2';          // Default export check
 import SmoothScroll from './components/SmoothScroll';// Default export check
-import RevealLinks from "./components/RevealLinks";
+
 import Card from "./components/Card";
 import About from "./components/About";
 

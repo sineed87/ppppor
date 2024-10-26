@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { SquareArrowOutUpRight } from 'lucide-react';
+
 import FlipLink from './RevealLinks3';
 import FlipLink1 from './RevealLinks4';
 

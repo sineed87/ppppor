@@ -1,7 +1,7 @@
 // app/components/RevealLinks.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SquareArrowOutUpRight } from 'lucide-react';
+
 
 const RevealLinks: React.FC = () => {
   const links = ["Twitter", "LinkedIn", "Facebook", "Instagram"];
