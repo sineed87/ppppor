@@ -2,6 +2,13 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
+import localfont from "next/font/local";
+
+
+
+
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +22,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased bg-[#121212]">
+       
         {children}
       </body>
     </html>

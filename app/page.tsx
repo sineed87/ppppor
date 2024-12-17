@@ -2,39 +2,83 @@
 "use client";
 
 import React, { useRef } from 'react';
-import Header3 from './components/Header3';          // Default export check
-          // Default export check
-import Header2 from './components/Header2';          // Default export check
+         // Default export check
 import SmoothScroll from './components/SmoothScroll';// Default export check
 
-import Card from "./components/Card";
-import About from "./components/About";
+
+import { Canvas } from '@react-three/fiber';
+import Hero from './components/Hero2';
+import Navbar from './components/Navbar2';
+
+import Maskcomponent from "./components/Maskcomponent"
+import Work from "./components/Work"
+import Offer from './components/Offer';
+import Pricing from './components/Pricing';
+import Footer from "./components/Footer";
+import Ino from "./components/Ino"
+
+
+
+
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div ref={scrollRef} className="font-work">
+    <div ref={scrollRef} className="font-work ">
       <SmoothScroll>
-        <Header3 />
         
-        <div className="flex bg-[#4801FF]">
-          <div className="w-full font-work">
-            <Header2 />
+          <Navbar/>
+        
+        
+
+       
+
+        <div className=' '>
+          
+
+          
+         
+          
+          <Hero/>
+          <div className='font-is text-white'>
+            <Maskcomponent/>
           </div>
-        </div>
-
-        <div className="bg-[#4801FF]">
-          <Card />
-        </div>
-
-        <About />
-
-        <div className="flex bg-[#4801FF]">
-          <div className="w-full font-work">
-            <Header2 />
+       
+          <div className='text-white'>
+            
+             <Work/>
+             <Offer/>
+             
           </div>
+          <div className='font-is bg-[#121212] border rounded-[80px]'>
+            <Pricing/>
+          </div>
+          <div>
+            <Ino/>
+            <Footer/>
+          </div>
+          
+          
+
+          
+         
+          
+
         </div>
+        
+       
+
+
+       
+
+
+
+        
+        
+       
+
+        
 
       </SmoothScroll>
     </div>
