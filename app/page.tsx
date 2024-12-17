@@ -6,7 +6,7 @@ import React, { useRef } from 'react';
 import SmoothScroll from './components/SmoothScroll';// Default export check
 
 
-import { Canvas } from '@react-three/fiber';
+
 import Hero from './components/Hero2';
 import Navbar from './components/Navbar2';
 
