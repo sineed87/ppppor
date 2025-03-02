@@ -13,15 +13,15 @@ import Navbar from './components/Navbar2';
 
 import Work from "./components/Work"
 import Offer from './components/Offer';
-import Pricing from './components/Pricing';
+
 import Footer from "./components/Footer";
 
 
-import Comp from "./components/Comp"
+
 
 import { ScreenFitText } from './components/Hero2' // Ensure this path is correct
 import Header3 from "./components/Header3"
-import Header4 from "./components/Header4"
+
 
 
 
