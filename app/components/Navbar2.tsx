@@ -2,50 +2,52 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTelegram, faTwitter, faBehance } from "@fortawesome/free-brands-svg-icons";
 import { Button } from './buttonanim/button';
+import { motion } from "framer-motion";
+import { ArrowUpRight, CircleChevronRight } from 'lucide-react';
 
 const Navbar: React.FC = () => {
     return (
+        <nav className=" top-0 z-50 pl-10 pr-10 pt-1 w-full"> {/* Sticky with top: 0 */}
+            <div className="w-full  py-3 flex justify-between items-center   mt-2">
+                <div className="text-xl font-bold  text-white flex items-center gap-2">
 
 
-        <nav className="sticky top-0 z-50 p-2 " >
-            <div className="container mx-auto px-4 py-3 flex justify-between items-center border rounded-[80px] bg-[#121212] bg-opacity-50 backdrop-blur-md mt-2">
-                <div className="text-xl font-bold pl-4 text-white flex items-center gap-2">
-                    <svg
-                        className="w-[30px] "
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 480 480"
-                        fill="#FFFFFF"
-                    >
-                        <path d="M480 210H352l110.9-64-30-52L322 158l64-110.8-52-30L270 128V0h-60v128L146 17.2l-52 30L158 158 47.2 94l-30 52L128 210H0v60h128L17.2 334l30 52L158 322 94 432.9l52 30L210 352v128h60V352l64 110.9 52-30L322 322l110.9 64 30-52L352 270h128v-60z"></path>
-                    </svg>
-                    <h1 className='text-2xl  font-is'>SPIREWAVE</h1>
 
-
-                </div>
-                <ul className="flex space-x-10 text-white font-is text-xs ">
-                    <div className="flex gap-6 text-white font-is">
-                        <Button className="text-white text-xs" variant="linkHover2">Home</Button>
-                        <Button className="text-white text-xs" variant="linkHover2">Studio</Button>
-                        <Button className="text-white text-xs" variant="linkHover2">Cases</Button>
-                        <Button className="text-white text-xs" variant="linkHover2">Blog</Button>
-                        <Button className="text-white text-xs" variant="linkHover2">Prices</Button>
-                    </div>
-                </ul>
-                <div className='flex items-center gap-2'>
-                    <Button className="bg-[#222222] font-is text-[#EE656C] hover:text-white hover:scale-110 duration-200 rounded-[80px]" variant="gooeyRight">Contact</Button>
-                    <div className="space-x-2 mr-4 mt-1 flex text-white  items-center">
+                    <h1 className="text-xs text-[#f2ecff]   font-is">Ignition Works</h1>
+                    <div className="space-x-2 ml-2  flex text-white items-center">
                         <a href="https://t.me/+o5EOOH5TNI0zMzM0" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faTelegram} className="text-lg" />
                         </a>
                         <a href="https://x.com/justblazeey" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faTwitter} className="text-lg" />
+                            <FontAwesomeIcon icon={faTwitter} className="text-lg" />
                         </a>
-                        <a href="https://t.me/+o5EOOH5TNI0zMzM0" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faBehance} className="text-lg" />
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                            <FontAwesomeIcon icon={faBehance} className="text-lg" />
                         </a>
-
-                        
                     </div>
+                </div>
+                <ul className="flex  text-white font-is text-xs md:inline-block">
+                    <div className="flex  text-white font-is">
+                        <Button className="text-[#c4c3c3] text-sm" variant="linkHover2">Home</Button>
+                        <Button
+                            className="text-white text-sm"
+                            variant="linkHover2"
+                            onClick={() => document.getElementById('studio')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            Studio
+                        </Button>
+                        <Button onClick={() => document.getElementById('cases')?.scrollIntoView({ behavior: 'smooth' })} className="text-white text-sm" variant="linkHover2">Cases</Button>
+                        <Button onClick={() => document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' })} className="text-white text-sm" variant="linkHover2">Blog</Button>
+                        <Button onClick={() => document.getElementById('prices')?.scrollIntoView({ behavior: 'smooth' })} className="text-white text-sm" variant="linkHover2">Prices</Button>
+
+                    </div>
+                </ul>
+                <div className="flex items-center gap-2">
+
+                    <Button className="flex items-center gap-2 font-is text-xs rounded-full p-2 pr-4 pl-4" variant="gooeyRight">
+
+                        <h1 className='flex items-center gap-1' >Let's talk <ArrowUpRight size={15} /></h1>
+                    </Button>
                 </div>
             </div>
         </nav>

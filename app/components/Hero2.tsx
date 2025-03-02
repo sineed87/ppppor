@@ -1,55 +1,67 @@
-import React from 'react';
-import { Button } from "./buttonanim/button";
-import { CircleChevronRight } from 'lucide-react';
+'use client'; // Required for client-side components in Next.js App Router
 
-const Hero = () => {
-    return (
-        <div className=" justify-center h-screen relative">
-            {/* Text content */}
-            <div className="flex items-center justify-center  font-normal h-screen leading-none font-is text-white pt-40">
-                <div className=' flex items-center flex-col '>
-                    <Button className='flex items-center gap-2 border rounded-[80px] p-2 pr-4 pl-4' variant="gooeyRight">
+import { useEffect, useRef } from 'react';
 
-                        <CircleChevronRight strokeWidth={2} size={16} />
-                        <h1>
-                            Subscription. Pause or cancel anytime
-                        </h1>
+export const ScreenFitText: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLSpanElement>(null);
 
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
 
-                    </Button>
+    const resizeText = () => {
+      const container = containerRef.current;
+      const text = textRef.current;
 
+      if (!container || !text) return;
 
-                    <div className='flex-col  items-center justify-center pt-5 '>
-                        <h1 className='text-6xl text-center'>All-in-one solution
-                        </h1>
-                        <h1 className='text-6xl'>Unlimited design & development.</h1>
-                    </div>
-                    <div className="flex justify-center pt-20 w-[1000px] ">
-                        <video
-                            className="shadow-lg rounded-[40px] w-auto h-auto  pointer-events-none"
-                            autoPlay
-                            loop
-                            muted
-                        >
-                            <source src="/videos/img1.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+      const containerWidth = container.offsetWidth;
+      let min = 1;
+      let max = 2500;
 
-                </div>
+      while (min <= max) {
+        const mid = Math.floor((min + max) / 2);
+        text.style.fontSize = `${mid}px`;
 
+        if (text.offsetWidth <= containerWidth) {
+          min = mid + 1;
+        } else {
+          max = mid - 1;
+        }
+      }
 
-            </div>
+      text.style.fontSize = `${max}px`;
+    };
 
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(resizeText, 150);
+    };
 
+    resizeText();
+    window.addEventListener('resize', handleResize);
 
-            {/* Image on the left */}
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
+  return (
+    <div className="flex w-full items-center justify-center" ref={containerRef}>
+      <div className="relative flex flex-col items-end">
+        {/* The radial background pattern div placed in front of the text */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-10"></div>
 
-            {/* Video at the bottom-right */}
-
-        </div>
-    );
+        <span
+          className="relative mt-60 text-center text-xs font-is font-bold uppercase text-[#fff] z-20"
+          ref={textRef}
+        >
+          studio
+        </span>
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-10"></div>
+        
+      </div>
+    </div>
+  );
 };
-
-export default Hero;

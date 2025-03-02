@@ -1,0 +1,18 @@
+.container {
+    width: 200vh;
+    height: 100vh; /* Full height of the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .text {
+    white-space: nowrap; /* Prevent text wrapping */
+    text-align: center;
+    font-weight: bold;
+    width: 200%;
+    transition: font-size 0.3s ease; /* Smooth resizing */
+  }
+  

@@ -1,0 +1,111 @@
+/* Remove font-face definitions */
+
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Main container */
+.main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: aquamarine;
+    overflow: hidden;
+}
+
+/* Top section */
+.top {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 9;
+    overflow: hidden;
+}
+
+/* Center section */
+.center {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    transform-origin: center;
+    background-color: rgb(0, 0, 0);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+    overflow: hidden;
+}
+
+/* Bottom section */
+.bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+/* Main text in the middle */
+.main h1 {
+    font-size: 22vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Top text adjustments */
+.topH1 {
+    bottom: 50%;
+}
+
+/* Bottom text adjustments */
+.bottomH1 {
+    top: 0% !important;
+}
+
+/* Content section */
+.content {
+    margin-top: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    gap: 4vh;
+}
+
+/* Content header h4 */
+.content h4 {
+    font-size: 1vw;
+}
+
+/* Content main text h3 */
+.content h3 {
+    width: 22%;
+    font-size: 3vw;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* Button styling */
+.content .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7vw;
+    height: 2vw;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #0d0d0d;
+}
+
+/* Content h2 */
+.content h2 {
+    font-size: 20vw;
+}

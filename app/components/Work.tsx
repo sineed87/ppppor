@@ -1,63 +1,69 @@
 import React from 'react';
-import { Button } from "./buttonanim/button";
-import { ArrowUpRight, CircleChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Button } from './buttonanim/button';
+import { ChevronRight } from 'lucide-react';
 
 const OurWork: React.FC = () => {
-    return (
-        <div className="mt-[100px] p-20 transition-all duration-300">
-            <div className="flex flex-col pl-10">
-                <div className="pb-20">
-                    <h1 className="text-sm mb-4 flex font-hel text-[#EE656C]">[CASES]</h1>
-                    <div className="flex items-center justify-between">
-                        <h1 className="text-6xl font-hel tracking-widest font-normal flex items-center">
-                            Our Work <ArrowUpRight strokeWidth={1} size={64} />
-                        </h1>
-                        <div className="pr-4">
-                            <Button
-                                variant="linkHover2"
-                                className="text-white border rounded-[80px] text-xs flex items-center gap-2"
-                            >
-                                VIEW ALL <CircleChevronRight size={14} />
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    const slides = [
+        {
+            title: 'InkSpire+',
+            description: 'A creative storytelling platform that merges technology with artistic expression.',
+            mainImage: '/images/a515.png',
+            title1: "/website/"
 
-            {/* Horizontal Gallery */}
-            <div className="flex">
-                {[
-                    {
-                        image: "/images/a4.png",
-                        title: "InkSpire Studio",
-                        description:
-                            "The campaign 'Anoniem, niet alleen' sheds light on the critical, low-threshold, and anonymous support the organization offers to women facing unplanned pregnancies.",
-                    },
-                    {
-                        image: "/images/a7.png",
-                        title: "Ontdek Hospitality",
-                        description:
-                            "Not Your Average Job’ is a multi-asset awareness and perception campaign that showcases the dynamics of working in the hospitality industry.",
-                    },
-                    {
-                        image: "/images/a91.png",
-                        title: "Feed Cheester",
-                        description:
-                            "For the owned social channels of Lidl we created 250+ videos bursting with energy and humor, spreading the brand's promise both organically and through paid campaigns across the entire .",
-                    },
-                ].map((item, index) => (
-                    <div key={index} className="flex-shrink-0 mr-4 last:mr-0 pl-10">
-                        <img
-                            src={item.image}
-                            alt={item.title}
-                            className="w-[464px] h-[263px] border rounded-lg transition-all duration-100"
-                        />
-                        <h1 className="text-4xl font-dm uppercase mt-4">{item.title}</h1>
-                        <p className="text-sm text-left mt-2 max-w-[350px]">
-                            {item.description}
-                        </p>
-                    </div>
-                ))}
+        },
+        {
+            title: 'Indigo+',
+            description: 'A dynamic branding initiative that redefines visual identity and engagement.',
+            mainImage: '/images/b1.png',
+            title1: "/app/"
+        },
+    ];
+
+    return (
+        <div className="relative min-h-screen flex items-center justify-center bg-transparent overflow-hidden">
+            {/* Grid Background */}
+            <div className="absolute inset-2 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
+            {/* Content */}
+            <div className="relative z-10  mt-20 mb-20 w-full">
+                <div className="w-full border-t border-white mb-4" />
+                <div>
+                    <p className="text-sm mb-2">W 02/04</p>
+
+                    {/* Text: FEATURED */}
+                    <h2 className="text-lg flex justify-between font-bold uppercase mb-6">WORK <span className=' font-thin'>(2)</span></h2>
+                </div>
+                {/* Images Section */}
+                <div className="flex justify-between gap-4">
+                    {slides.map((slide, index) => (
+                        <div key={index} className="w-1/2">
+                            {/* Image */}
+                            <motion.img
+                                src={slide.mainImage}
+                                alt={slide.title}
+                                className="h-[500px] w-full object-cover"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 1 }}
+                            />
+
+                            {/* Title & Description */}
+                            <div className="mt-4">
+                                <p className="text-white  text-xs  mb-1">{slide.title1}</p>
+                                <h2 className="text-white text-5xl font-black uppercase">{slide.title}</h2>
+                                <p className="text-gray-300 text-sm  mt-1">{slide.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Centered Button */}
+                <div className="mt-20 flex justify-center">
+                    <Button className="flex items-center font-sm gap-2 border rounded-full p-2 pr-2 pl-4" variant="gooeyRight">
+                        <h1 className='flex items-center'>explore <ChevronRight /></h1>
+                    </Button>
+                </div>
             </div>
         </div>
     );

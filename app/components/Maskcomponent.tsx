@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <MaskText />
-      <Button className='font-hel border rounded-[80px] text-xs text-white font-normal  hover:bg-[#333333] focus:outline-none focus:ring-gray-500 ' variant="linkHover2">ABOUT US</Button>
+      <Button className='font-hel border rounded-[80px] text-xs text-white font-normal  hover:bg-[#333333] focus:outline-none focus:ring-gray-500 ' variant="gooeyRight">ABOUT US</Button>
      
     </div>
   );
