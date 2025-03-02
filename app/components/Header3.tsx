@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowDown, ChevronDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 export default function Home() {
   return (

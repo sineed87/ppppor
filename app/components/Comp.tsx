@@ -1,6 +1,6 @@
 import styles from '../components/sta/styles.module.scss';
 import { useScroll, useTransform, motion } from 'framer-motion';
-import { div } from 'framer-motion/client';
+
 import { useRef } from 'react';
 
 export default function Index() {

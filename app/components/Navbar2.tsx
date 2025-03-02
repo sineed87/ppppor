@@ -2,8 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTelegram, faTwitter, faBehance } from "@fortawesome/free-brands-svg-icons";
 import { Button } from './buttonanim/button';
-import { motion } from "framer-motion";
-import { ArrowUpRight, CircleChevronRight } from 'lucide-react';
+
+import { ArrowUpRight } from 'lucide-react';
 
 const Navbar: React.FC = () => {
     return (

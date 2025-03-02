@@ -10,15 +10,15 @@ import SmoothScroll from './components/SmoothScroll';// Default export check
 
 import Navbar from './components/Navbar2';
 
-import Maskcomponent from "./components/Maskcomponent"
+
 import Work from "./components/Work"
 import Offer from './components/Offer';
 import Pricing from './components/Pricing';
 import Footer from "./components/Footer";
-import Ino from "./components/Ino"
+
 
 import Comp from "./components/Comp"
-import Asa from "./components/Asa"
+
 import { ScreenFitText } from './components/Hero2' // Ensure this path is correct
 import Header3 from "./components/Header3"
 import Header4 from "./components/Header4"
@@ -47,7 +47,7 @@ export default function Home() {
           <ScreenFitText />
         </div>
         <Header3/>
-        <Header4/>
+       
         
        
         
@@ -73,7 +73,7 @@ export default function Home() {
           <div className='text-white p-10'>
 
             <Work />
-            <Comp />
+            
             <Offer />
 
 
@@ -81,9 +81,7 @@ export default function Home() {
           <div className='rounded-[100px] '>
 
           </div>
-          <div className='font-is bg-[#121212] border rounded-[80px] m-10'>
-            <Pricing />
-          </div>
+         
           <div>
 
             <Footer />
