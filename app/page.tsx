@@ -13,6 +13,7 @@ import Navbar from './components/Navbar2';
 
 import Work from "./components/Work"
 import Offer from './components/Offer';
+import Offer2 from './components/Offer2';
 
 import Footer from "./components/Footer";
 
@@ -73,8 +74,10 @@ export default function Home() {
           <div className='text-white p-10'>
 
             <Work />
+           
             
             <Offer />
+            <Offer2 />
 
 
           </div>

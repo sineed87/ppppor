@@ -1,26 +1,48 @@
-export default function Home() {
-  return (
-    <div id="studio" className="pt-40 pb-40">
-      <h1 
-        className="text-sm pl-80 uppercase tracking-widest mb-20 bg-clip-text text-transparent"
-        style={{
-          backgroundImage: 'linear-gradient(to right top, #ee656c, #e883bf, #beadf4, #9ccfff, #ade7f5)',
-        }}
-      >
-        [What we do]
-      </h1>
+import React from "react";
 
-      <div className="flex flex-col w-full font-black font-is text-[#ADE7F5]">
-        {['3D', 'VISUAL', 'MOTION', 'PRODUCT', 'CRYPTO', 'EVENTS'].map((item, index) => (
+const WhatWeDo = () => {
+  const itemsRow1 = [
+    "UI/UX Design",
+    "Collaboration",
+    "Quality Assurance",
+    "Agile/Scrum",
+    "Creativity and Innovation",
+  ];
+
+  const itemsRow2 = [
+    "Leadership and Management",
+    "Conversation Design",
+    "Competitive Analysis",
+  ];
+
+  return (
+    <div className="relative pt-40 pb-40 flex flex-col items-center justify-center text-white p-6">
+      <div className="absolute inset-2 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+      <h1 className="text-lg uppercase font-bold font-is mb-6">What we do</h1>
+      <div className="flex flex-wrap justify-center gap-4 max-w-4xl w-full text-xs">
+        {itemsRow1.map((item, index) => (
           <div
             key={index}
-            className="relative group border-t border-gray-700 cursor-pointer"
+            className="border border-white text-white px-6 py-3 rounded-full text-center"
+            style={{ borderRadius: "200px", borderWidth: "1px" }}
           >
-            <h1 className="text-9xl pl-80 z-10 relative">{item}</h1>
-            <div className="absolute inset-0 bg-[#EE656C] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center z-0"></div>
+            {item}
+          </div>
+        ))}
+      </div>
+      <div className="flex flex-wrap justify-center gap-4 text-xs max-w-2xl w-full mt-4">
+        {itemsRow2.map((item, index) => (
+          <div
+            key={index}
+            className="border border-white text-white px-6 py-3 rounded-full text-center"
+            style={{ borderRadius: "200px", borderWidth: "1px" }}
+          >
+            {item}
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
+
+export default WhatWeDo;
